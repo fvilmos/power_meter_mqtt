@@ -38,6 +38,7 @@ Conversion from kWh to Watts, measured with a sensor of 2000 pulses/ kWh:
 <h1 align="left">
   <a name="Pulse Output" href=""><img src="images/ds18b20_connection.png" alt="400" width="400"></a>
 </h1>
+
 ### Connection diagramm
 
 Below the wiring diagramm, made with [Easyeda](https://easyeda.com/) tool. 
