@@ -1,7 +1,7 @@
 # Power Meter with mqtt-for devices with pulse output
 
 
-##About
+## About
 
  This project presents a simple solution for measureing the energy consumption of a house. The key element is a cheap energy monitor with pulse output, connected to an [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32). This, over WiFi using mqtt protocol can be easely connected to a home automation system to report:
 - instant power (in Watts);
@@ -51,7 +51,7 @@ Below the wiring diagramm, made with [Easyeda](https://easyeda.com/) tool.
   <a name="Pulse Output" href=""><img src="images/esp32pem_out.png" alt="400" width="400"></a>
 </h1>
 
-#How to use
+# How to use
 
 Clone the repository, update the .ino file in [Arduino IDE](https://www.arduino.cc/en/main/software) with your local WiFi / mqtt configuration.
 
