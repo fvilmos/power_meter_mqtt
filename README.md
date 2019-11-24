@@ -50,9 +50,23 @@ Below the wiring diagramm, made with [Easyeda](https://easyeda.com/) tool.
 <h1 align="left">
   <a name="Pulse Output" href=""><img src="images/esp32pem_out.png" alt="400" width="400"></a>
 </h1>
-# How to use
 
-Clone the repository, update the .ino file in [Arduino IDE](https://www.arduino.cc/en/main/software) with your local WiFi / mqtt configuration. Upload the code in the [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32), wire the board accordingly. The output will be something similar on the mqtt topics:
+#How to use
+
+Clone the repository, update the .ino file in [Arduino IDE](https://www.arduino.cc/en/main/software) with your local WiFi / mqtt configuration.
+
+```
+/*mqtt declarations*/
+const char* mqtt_server = "<IP OF THE MQTT SERVER>";
+const char* mqtt_user = "<USER NAME>";
+const char* mqtt_password = "<PASSWORD>";
+...
+/* SSID and Password of WiFi router */
+const char* ssid = "<ROUTER SSID>";
+const char* password = "<ROUTER PASSWORD>";
+```
+
+ Upload the code in the [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32) over USB, wire the board accordingly to the schematics. The output will be something similar on the mqtt topics:
 <h1 align="left">
 <a name="Pulse Output" href=""><img src="images/mqtt.png" alt="400" width="400"></a>
 </h1>
