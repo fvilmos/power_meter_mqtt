@@ -43,7 +43,7 @@ Conversion from kWh to Watts, measured with a sensor of 2000 pulses/ kWh:
 
 Below the wiring diagramm, made with [Easyeda](https://easyeda.com/) tool. 
 <h1 align="center">
-  <a name="Pulse Output" href=""><img src="images/schematics.png" alt="" width="808"></a>
+  <a name="Pulse Output" href=""><img src="images/schematics.png" alt="" width="400"></a>
 </h1>
 
 
@@ -71,5 +71,53 @@ const char* password = "<ROUTER PASSWORD>";
 <h1 align="left">
 <a name="Pulse Output" href=""><img src="images/mqtt.png" alt="400" width="400"></a>
 </h1>
+
+~~~
+Additionaly the following mqtt commands can be used:
+- topic: /pulseenergymonitor/cmd
+- payload: c / r
+  c - clear kWh information
+  r - reset the device
+~~~
+
+## Home Assistant integration
+
+[Home Assistant](https://www.home-assistant.io/) is an open source automatization system, with a high number of component integratios. Is a good choise for complex IOT and DIY smart home atomatization. Below a panel component which shows the sensor information and energy consumption.
+
+<h1 align="left">
+<a name="Pulse Output" href=""><img src="images/hass.png" alt="400" width="400"></a>
+</h1>
+
+Paste the following lines in the configuration.yaml file:
+```
+sensor:
+  - platform: mqtt
+    state_topic: "/pulseenergymonitor/watts"
+    name: "Pulse Energy Monitor"
+    icon: mdi:gauge
+    unit_of_measurement: "W"
+  - platform: mqtt
+    state_topic: "/pulseenergymonitor/kWh"
+    name: "PEM kWh"
+    icon: mdi:gauge
+    unit_of_measurement: "kWh"
+```
+Energy consuption measurement has a specific component in Home Assistant, the [utility meter](https://www.home-assistant.io/integrations/utility_meter/), past into configuration.yaml file.
+```
+##################################
+# Utility meter
+##################################
+
+utility_meter:
+  daily_energy:
+    source: sensor.pem_kwh
+    cycle: daily
+  weekly_energy:
+    source: sensor.pem_kwh
+    cycle: weekly
+  monthly_energy:
+    source: sensor.pem_kwh
+    cycle: monthly
+```
 
 /Enjoy.
