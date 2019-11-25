@@ -32,6 +32,7 @@ Conversion from kWh to Watts, measured with a sensor of 2000 pulses/ kWh:
 <h1 align="center">
   <a name="Pulse Output" href=""><img src="images/pulse_measurement.png" alt="" width="800"></a>
 </h1>
+
 ### The temperature sensor
 [DS18b20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf) is a fast digital termometer using 1-Wire protocol. Usual connection diagramm is with an 4.7 kOhm pull-up resistor.
 
