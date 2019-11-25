@@ -49,9 +49,18 @@ Below the wiring diagramm, made with [Easyeda](https://easyeda.com/) tool.
 
 
 ### Final integration
+<table>
 <h1 align="left">
+<tr>
+  <th>
   <a name="Pulse Output" href=""><img src="images/esp32pem_out.png" alt="400" width="400"></a>
+  </th>
+  <th>
+  <a name="Pulse Outputx" href=""><img src="images/mounted.jpg" alt="400" width="400"></a>
+  </th>
+</tr>
 </h1>
+</table>
 
 # How to use
 
