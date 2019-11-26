@@ -8,6 +8,8 @@
 - total power consumption (in kWh);
 - Device temperature (in Celsius) using a DS18b20 temperature sensor.
 
+OTA support is enabled, after first software upload, the ESP will available for updates on local network over [Arduino IDE](https://www.arduino.cc/en/main/software).
+
 ## Hardware Components
 
 ### ESP 32 board
