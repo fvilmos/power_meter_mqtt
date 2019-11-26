@@ -4,7 +4,7 @@
 ## About
 
  This project presents a simple solution for measureing the energy consumption of a house. The key element is a cheap energy monitor with pulse output, connected to an [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32). This, over WiFi using mqtt protocol can be easely connected to a home automation system to report:
-- instant power (in Watts);
+- instant power (in Watt);
 - total power consumption (in kWh);
 - Device temperature (in Celsius) using a DS18b20 temperature sensor.
 
@@ -35,10 +35,6 @@ Conversion from kWh to Watts, measured with a sensor of 2000 pulses/ kWh:
 
 ### The temperature sensor
 [DS18b20](https://datasheets.maximintegrated.com/en/ds/DS18B20.pdf) is a fast digital termometer using 1-Wire protocol. Usual connection diagramm is with an 4.7 kOhm pull-up resistor.
-
-<h1 align="left">
-  <a name="Pulse Output" href=""><img src="images/ds18b20_connection.png" alt="400" width="400"></a>
-</h1>
 
 ### Connection diagramm
 
@@ -77,8 +73,8 @@ const char* ssid = "<ROUTER SSID>";
 const char* password = "<ROUTER PASSWORD>";
 ```
 
- Upload the code in the [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32) over USB, wire the board accordingly to the schematics. The output will be something similar on the mqtt topics:
-<h1 align="left">
+Upload the code in the [ESP32 WROOM 32 board](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/modules-and-boards.html#esp-modules-and-boards-esp32-wroom-32) over USB, wire the board accordingly to the schematics. The output will be something similar on the mqtt topics:
+<h1 align="center">
 <a name="Pulse Output" href=""><img src="images/mqtt.png" alt="400" width="400"></a>
 </h1>
 
@@ -94,7 +90,7 @@ Additionaly the following mqtt commands can be used:
 
 [Home Assistant](https://www.home-assistant.io/) is an open source automatization system, with a high number of component integratios. Is a good choise for complex IOT and DIY smart home atomatization. Below a panel component which shows the sensor information and energy consumption.
 
-<h1 align="left">
+<h1 align="center">
 <a name="Pulse Output" href=""><img src="images/hass.png" alt="400" width="400"></a>
 </h1>
 
