@@ -90,9 +90,9 @@ Additionaly the following mqtt commands can be used:
 
 ## Home Assistant integration
 
-[Home Assistant](https://www.home-assistant.io/) is an open source automatization system, with a high number of component integratios. Is a good choise for complex IOT and DIY smart home atomatization. Below a panel component which shows the sensor information and energy consumption.
-
+[Home Assistant](https://www.home-assistant.io/) is an open source automatization system, with a high number of component integratios. Is a good choise for complex IOT and DIY smart home atomatization. Below a panel component and a log file which shows the sensor information and energy consumption.
 <h1 align="center">
+<a name="Pulse Output" href=""><img src="images/pemlog.png" alt="400" width="1024"></a>
 <a name="Pulse Output" href=""><img src="images/hass.png" alt="400" width="400"></a>
 </h1>
 
