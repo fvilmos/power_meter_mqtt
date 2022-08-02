@@ -65,6 +65,10 @@ Below the wiring diagram, made with [Easyeda](https://easyeda.com/) tool. In noi
 
 Clone the repository, update the .ino file in [Arduino IDE](https://www.arduino.cc/en/main/software) with your local WiFi / mqtt configuration.
 
+>Note: you need to install the following libraries before compile: [PubSubClient](https://www.arduino.cc/reference/en/libraries/pubsubclient/) - for mqtt client, [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/) - for 1-wire communication and [DallasTemerature](https://www.arduino.cc/reference/en/libraries/dallastemperature/) - for DS18b20 temperature sensor.
+
+>Note: to enable serial debugging, uncomment the following line: /*#define DEBUG*/
+
 ```
 /*mqtt declarations*/
 const char* mqtt_server = "<IP OF THE MQTT SERVER>";
