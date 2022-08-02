@@ -67,7 +67,9 @@ Clone the repository, update the .ino file in [Arduino IDE](https://www.arduino.
 
 >Note: you need to install the following libraries before compile: [PubSubClient](https://www.arduino.cc/reference/en/libraries/pubsubclient/) - for mqtt client, [OneWire](https://www.arduino.cc/reference/en/libraries/onewire/) - for 1-wire communication and [DallasTemerature](https://www.arduino.cc/reference/en/libraries/dallastemperature/) - for DS18b20 temperature sensor.
 
->Note: to enable serial debugging, uncomment the following line: /*#define DEBUG*/
+>Note: to enable serial debugging, uncomment the following line: #define DEBUG
+
+>Note: once flashed the the ESP32, after a succesfull connect to your WiFi, OTA update become available. This means the device can be mounted and the software can be flashed / updated over the your local network (see the new port under ArduinoIDE->tools->port->network ports).
 
 ```
 /*mqtt declarations*/
