@@ -58,6 +58,7 @@ volatile double dPulsePeriod = 0.0;       /*period measured  between 2 impulses*
 volatile double dPower = 0.0;             /*instant power, in W*/
 volatile boolean bPulseDetected = false;  /*first pulse detetcted*/
 volatile unsigned long ulStartTime = 0;   /*time measured when firts pulse from pulsed energy sensor fires*/
+volatile unsigned long ulCurrentMillis = 0;   /*temporary variable for storing millis value at `isr()` function start*/
 volatile double dKWh=0.0;                 /*cumulative kWh*/
 volatile unsigned int uiIsrCount = 0;     /*counter to hold the number of measirements*/
 volatile double dTotalW = 0.0;            /*total Watts measured over a raporting cycle on mqtt*/
@@ -70,17 +71,19 @@ unsigned int uiCount = 0;                 /*counter used to measure the secounds
 ************************************************************/
 void IRAM_ATTR isr()
 {
+  ulCurrentMillis = millis();
+  
   /*test if first pulse arrived*/
   if (bPulseDetected == false)
   {
       /*get current time*/
-      ulStartTime = millis();
+      ulStartTime = ulCurrentMillis;
       bPulseDetected = true;
   }
   else  /*secound pulse, test if isr issue*/
   {
     /*time measured in secounds, from the last measurement*/
-    dPulsePeriod = (double)(millis()-ulStartTime)/1000.0; 
+    dPulsePeriod = (double)(ulCurrentMillis-ulStartTime)/1000.0; 
     
     /*ignore, if period is shorther than pulse legth ~90ms*/
     if (dPulsePeriod <= SECOUND_ISR_PERIOD)
@@ -109,8 +112,9 @@ void IRAM_ATTR isr()
       /*update kWh*/
       dKWh += ((dPulsePeriod/HOUR)*(dPower/1000.0));
       
-      /*reset pulse detection, so new measurement can occure*/
-      bPulseDetected = false;
+      /*get current time*/
+      ulStartTime = ulCurrentMillis;
+      bPulseDetected = true;
 
     }
 
